@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block title %}
+  Listagem de Musicas
+{% endblock title %}
+
+{% block tituloPagina %}
+  Listagem de Musicas
+{% endblock tituloPagina %}
+
+{% block content %}
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Musica</th>
+      <th>Autor</th>
+      <th>Album</th>
+      <th>Ano</th>
+      <th>Ação</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for musica in lista %}
+    <tr>
+      <td>{{ musica.musica }}</td>
+      <td>{{ musica.autor }}</td>
+      <td>{{ musica.album }}</td>
+      <td>{{ musica.anoPublicacao }}</td>
+      <td>
+        <a href="#">
+          <span class="glyphicon glyphicon-pencil"></span>
+        </a>
+        <a href="#">
+          <span class="glyphicon glyphicon-trash"></span>
+        </a>
+      </td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+<a href="#">
+<button type="submit" class="btn btn-primary">
+    Cadastrar
+</button>
+</a>
+
+{% endblock content %}
